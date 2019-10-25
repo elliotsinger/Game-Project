@@ -22,7 +22,7 @@ function draw(){
   if (frameCount % 25 == 0) {
       let  b = new Ball(width, random(0,height), -3);
       balls.push(b);
-      console.log(balls); //print the balls array to the console
+
     }
 
 //	draw all the balls in that array
@@ -44,16 +44,16 @@ class Avatar {
 	}
 
 	drawMe(){  // draw the running person
-    		stroke("green");
+    		stroke("white");
         strokeWeight(3);
-    		fill("blue");
-		    ellipse(this.x,this.y,20,20);
-        line(this.x,this.y, this.x, this.y+40);
-        line(this.x, this.y+40, this.x-20, this.y+60);
-        line(this.x, this.y+40, this.x+10, this.y+50);
-        line(this.x+10, this.y+50, this.x+5, this.y+60);
-        line(this.x, this.y+15, this.x-10, this.y+25);
-        line(this.x-10, this.y+25, this.x+10, this.y+35);
+    		fill("black");
+		    ellipse(this.x,this.y,50,50);
+        line(this.x,this.y, this.x, this.y+50);
+        line(this.x, this.y+50, this.x-30, this.y+70);
+        line(this.x, this.y+50, this.x+30, this.y+60);
+        line(this.x+10, this.y+60, this.x+6, this.y+70);
+        line(this.x, this.y+25, this.x-20, this.y+35);
+        line(this.x-20, this.y+35, this.x+20, this.y+45);
 	}
 
 	moveMe(){
@@ -87,8 +87,8 @@ class Ball {
 	drawBall(){
     	stroke(0);
       strokeWeight(1);
-    	fill("red");
-		  ellipse(this.x,this.y,10,10);
+    	fill("purple");
+		  triangle(this.x,this.y, this.x+40, this. y, this.x+20, this.y+20);
 	}
 
 	//update the location of the ball, so it moves across the screen
@@ -101,6 +101,7 @@ class Ball {
   	bounceBall(){
     		if (this.x >= me.x-15 && this.x <= me.x+15 && this.y > me.y-40 && this.y < me.y+40){
       			this.speed = -this.speed;
+            console.log(balls); //print the balls array to the console
     		}
   	}
 
